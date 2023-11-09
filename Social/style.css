@@ -1,0 +1,225 @@
+:root {
+  /* Primary */
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+  --YouTube: hsl(348, 97%, 39%);
+
+  /* Dark Theme */
+  --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+  --Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+  --Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+  --Desaturated-Blue-Text: hsl(228, 34%, 66%);
+  --White-Text: hsl(0, 0%, 100%);
+
+  /* Light Theme */
+  --White-BG: hsl(0, 0%, 100%);
+  --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+  --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+  --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+  --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+}
+
+body {
+  background-color: var(--Very-Dark-Blue-BG);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: 2rem auto;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.soc {
+  color: var(--White-Text);
+  font-size: 1.5rem;
+}
+.tot {
+  font-size: 0.8rem;
+  color: var(--Desaturated-Blue-Text);
+}
+.line {
+  display: none;
+  height: 0.2rem;
+  width: 100%;
+  background-color: var(--Desaturated-Blue-Text);
+}
+
+.right {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--Desaturated-Blue-Text);
+  align-items: center;
+}
+.switch {
+  width: 4rem;
+  height: 2rem;
+  position: relative;
+  background-color: blueviolet;
+  border-radius: 1rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slide {
+  background-color: white;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.1rem;
+  /* transition: 1s; */
+}
+.switch input:checked + .slide {
+  left: 2rem;
+}
+
+/* BLOCKS */
+.blocks {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 2rem 0;
+}
+.block {
+  width: 23%;
+  background-color: var(--Dark-Desaturated-Blue-Card-BG);
+  padding-bottom: 2rem;
+}
+.top_board {
+  width: 100%;
+  height: 2px;
+}
+.block:first-child .top_board,
+.block:nth-child(2) .top_board {
+  background-color: var(--Facebook);
+}
+.block:nth-child(3) .top_board {
+  background-image: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%),
+    purple
+  );
+}
+.block:nth-child(4) .top_board {
+  background: var(--YouTube);
+}
+
+.log {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--Dark-Grayish-Blue-Text);
+  font-weight: 600;
+  font-size: 0.7rem;
+  align-items: center;
+  margin: 1.2rem 0;
+}
+.number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--White-Text);
+}
+.foll {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  color: var(--Dark-Grayish-Blue-Text);
+}
+.log.second {
+  color: var(--Lime-Green);
+}
+.block:last-child .log.second {
+  color: var(--Bright-Red);
+}
+
+.blacks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.black {
+  width: 20%;
+  background-color: var(--Dark-Desaturated-Blue-Card-BG);
+  padding: 1rem;
+}
+.top_bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--Dark-Grayish-Blue-Text);
+  font-weight: 600;
+  font-size: small;
+}
+.num {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 1.5rem;
+}
+.sec {
+  font-size: small;
+}
+.main_num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--White-Text);
+}
+.green {
+  color: var(--Lime-Green);
+}
+.red {
+  color: var(--Bright-Red);
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 90%;
+  }
+  .top {
+    /* display: block; */
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .right {
+    justify-content: space-between;
+  }
+  .line {
+    display: block;
+  }
+  .blocks {
+    flex-wrap: wrap;
+  }
+  .block {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .black {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) and (min-width: 500px) {
+  .blocks {
+    flex-wrap: wrap;
+  }
+  .block {
+    width: 45%;
+    margin-bottom: 1.5rem;
+  }
+  .black {
+    width: 40%;
+  }
+}
